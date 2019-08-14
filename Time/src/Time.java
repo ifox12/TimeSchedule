@@ -33,7 +33,7 @@ class Time {
     }
 
     public Time add(int seconds, int minutes) {
-        return new Time(this.internalSeconds + seconds + convertMinutesToInternal(minutes));
+        return add(seconds, minutes, 0);
     }
 
     private int convertMinutesToInternal(int minutes) {
