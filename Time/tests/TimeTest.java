@@ -8,7 +8,7 @@ class TimeTest {
 
         Time testTime = new Time(1);
 
-        Time result = testTime.add(2);
+        Time result = testTime.add(new Time(2));
 
         assertEquals(3, result.getSeconds());
     }
@@ -18,7 +18,7 @@ class TimeTest {
 
         Time testTime = new Time(59);
 
-        Time result = testTime.add(2);
+        Time result = testTime.add(new Time(2));
 
         assertEquals(1, result.getMinutes());
         assertEquals(1, result.getSeconds());
@@ -29,7 +29,7 @@ class TimeTest {
 
         Time testTime = new Time(0, 59);
 
-        Time result = testTime.add(0, 2);
+        Time result = testTime.add(new Time(0, 2));
 
         assertEquals(1, result.getHours());
         assertEquals(1, result.getMinutes());
@@ -40,7 +40,7 @@ class TimeTest {
 
         Time testTime = new Time(1, 1);
 
-        Time result = testTime.add(2, 2);
+        Time result = testTime.add(new Time(2, 2));
 
         assertEquals(3, result.getMinutes());
         assertEquals(3, result.getSeconds());
@@ -51,7 +51,7 @@ class TimeTest {
 
         Time testTime = new Time(0, 1);
 
-        Time result = testTime.add(1, 0);
+        Time result = testTime.add(new Time(1, 0));
 
         assertEquals(1, result.getMinutes());
         assertEquals(1, result.getSeconds());
@@ -62,7 +62,7 @@ class TimeTest {
 
         Time testTime = new Time(59, 1);
 
-        Time result = testTime.add(2, 0);
+        Time result = testTime.add(new Time(2, 0));
 
         assertEquals(1, result.getSeconds());
         assertEquals(2, result.getMinutes());
@@ -72,7 +72,7 @@ class TimeTest {
     void add_AddMinutesToSecondsWithoutCrossingOver_CorrectAddition() {
         Time testTime = new Time(1);
 
-        Time result = testTime.add(0, 1);
+        Time result = testTime.add(new Time(0, 1));
 
         assertEquals(1, result.getMinutes());
         assertEquals(1, result.getSeconds());
@@ -82,7 +82,7 @@ class TimeTest {
     void add_AddHoursToZero_TimeEqualsAddend() {
         Time testTime = new Time();
 
-        Time result = testTime.add(0,0, 1);
+        Time result = testTime.add(new Time(0,0, 1));
 
         assertEquals(0, result.getSeconds());
         assertEquals(0, result.getMinutes());
@@ -93,7 +93,7 @@ class TimeTest {
     void add_SecondsMinutesHoursToSecondsMinutesHoursWithoutCrossingOver_CorrectAddition() {
         Time testTime = new Time(3, 2, 1);
 
-        Time result = testTime.add(1, 2, 3);
+        Time result = testTime.add(new Time(1, 2, 3));
 
         assertEquals(4, result.getHours());
         assertEquals(4, result.getMinutes());
@@ -104,7 +104,7 @@ class TimeTest {
     void add_SecondsMinutesHoursToSecondsMinutesHoursWithCrossingOver_CorrectAddition() {
         Time testTime = new Time(59, 58, 1);
 
-        Time result = testTime.add(2, 3, 4);
+        Time result = testTime.add(new Time(2, 3, 4));
 
         assertEquals(6, result.getHours());
         assertEquals(2, result.getMinutes());
