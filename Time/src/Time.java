@@ -1,7 +1,7 @@
 class Time {
-    private final int SECONDS_PER_HOUR = 3600;
-    private final int MINUTES_PER_HOUR = 60;
     private final int SECONDS_PER_MINUTE = 60;
+    private final int MINUTES_PER_HOUR = 60;
+    private final int SECONDS_PER_HOUR = SECONDS_PER_MINUTE * MINUTES_PER_HOUR;
 
     private int internalSeconds = 0;
 
@@ -28,10 +28,6 @@ class Time {
         return new Time(this.internalSeconds + addend.internalSeconds);
     }
 
-    private int convertSecondsToInternal(int seconds) {
-        return seconds;
-    }
-
     private void setSeconds(int seconds) {
         this.internalSeconds += convertSecondsToInternal(seconds);
     }
@@ -55,6 +51,10 @@ class Time {
 
     int getHours() {
         return internalSeconds / SECONDS_PER_HOUR;
+    }
+
+    private int convertSecondsToInternal(int seconds) {
+        return seconds;
     }
 
     private int convertMinutesToInternal(int minutes) {
