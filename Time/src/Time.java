@@ -36,7 +36,7 @@ class Time {
     }
 
     private void setSeconds(int seconds) {
-        this.internalSeconds += seconds;
+        this.internalSeconds += convertSecondsToInternal(seconds);
     }
 
     private void setMinutes(int minutes) {
