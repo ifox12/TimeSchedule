@@ -110,4 +110,15 @@ class TimeTest {
         assertEquals(2, result.getMinutes());
         assertEquals(1, result.getSeconds());
     }
+
+    @Test
+    void subtract_SecondsMinutesHoursFromSecondsMinutesHours_CorrectSubtraction() {
+        Time testTime = new Time(2, 2, 2);
+
+        Time result = testTime.subtract(new Time(1, 1,1));
+
+        assertEquals(1, result.getHours());
+        assertEquals(1, result.getMinutes());
+        assertEquals(1, result.getSeconds());
+    }
 }

@@ -64,4 +64,8 @@ class Time {
     private int convertHoursToInternal(int hours) {
         return hours * SECONDS_PER_HOUR;
     }
+
+    Time subtract(Time subtrahend) {
+        return new Time(this.internalSeconds - subtrahend.internalSeconds);
+    }
 }

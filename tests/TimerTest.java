@@ -4,17 +4,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class TimerTest {
 
-    // TODO Stub Time for the next three tests to test something more useful
-    @Test
-    public void retrieveCurrentTime_CallItWith30Min_Returns30MinTimeObject() {
-            TestableTimer testTimer = new TestableTimer();
-            testTimer.fakeTime = new FakeTime(1800);
-
-            long result = testTimer.retrieveCurrentTime().getTimeInSeconds();
-
-            assertEquals(1800, result);
-    }
-
     @Test
     public void start_CallItWith1Hour_startTimeSetTo1HourTimeObject() {
         TestableTimer testTimer = new TestableTimer();
