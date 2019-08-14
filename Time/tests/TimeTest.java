@@ -1,10 +1,10 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class TimeTest {
+class TimeTest {
 
     @Test
-    public void add_AddSeconds_PlainAdditionResult() {
+    void add_AddSeconds_PlainAdditionResult() {
 
         Time testTime = new Time(1);
 
@@ -14,7 +14,7 @@ public class TimeTest {
     }
 
     @Test
-    public void add_AddSecondsCrossingOver60_ConvertFull60SecondsToMinutes() {
+    void add_AddSecondsCrossingOver60_ConvertFull60SecondsToMinutes() {
 
         Time testTime = new Time(59);
 
@@ -25,7 +25,7 @@ public class TimeTest {
     }
 
     @Test
-    public void add_AddMinutesCrossingOver60_ConvertFull60MinuteToHours() {
+    void add_AddMinutesCrossingOver60_ConvertFull60MinuteToHours() {
 
         Time testTime = new Time(0, 59);
 
@@ -36,7 +36,7 @@ public class TimeTest {
     }
 
     @Test
-    public void add_AddMinutesAndSecondsToMinutesAndSecondsNoCrossingOver_CorrectSeperateAdditions() {
+    void add_AddMinutesAndSecondsToMinutesAndSecondsNoCrossingOver_CorrectSeperateAdditions() {
 
         Time testTime = new Time(1, 1);
 
@@ -47,7 +47,7 @@ public class TimeTest {
     }
 
     @Test
-    public void add_AddSecondsToMinutes_KeepMinutesAndJustAddSeconds() {
+    void add_AddSecondsToMinutes_KeepMinutesAndJustAddSeconds() {
 
         Time testTime = new Time(0, 1);
 
@@ -58,7 +58,7 @@ public class TimeTest {
     }
 
     @Test
-    public void add_AddSecondsToMinutesCrossingOverFullMinute_CorrectAddingMinutes() {
+    void add_AddSecondsToMinutesCrossingOverFullMinute_CorrectAddingMinutes() {
 
         Time testTime = new Time(59, 1);
 
@@ -69,7 +69,7 @@ public class TimeTest {
     }
 
     @Test
-    public void add_AddMinutesToSecondsWithoutCrossingOver_CorrectAddition() {
+    void add_AddMinutesToSecondsWithoutCrossingOver_CorrectAddition() {
         Time testTime = new Time(1);
 
         Time result = testTime.add(0, 1);
@@ -79,7 +79,7 @@ public class TimeTest {
     }
 
     @Test
-    public void add_AddHoursToZero_TimeEqualsAddend() {
+    void add_AddHoursToZero_TimeEqualsAddend() {
         Time testTime = new Time();
 
         Time result = testTime.add(0,0, 1);
@@ -90,7 +90,7 @@ public class TimeTest {
     }
 
     @Test
-    public void add_SecondsMinutesHoursToSecondsMinutesHoursWithoutCrossingOver_CorrectAddition() {
+    void add_SecondsMinutesHoursToSecondsMinutesHoursWithoutCrossingOver_CorrectAddition() {
         Time testTime = new Time(3, 2, 1);
 
         Time result = testTime.add(1, 2, 3);
@@ -101,7 +101,7 @@ public class TimeTest {
     }
 
     @Test
-    public void add_SecondsMinutesHoursToSecondsMinutesHoursWithCrossingOver_CorrectAddition() {
+    void add_SecondsMinutesHoursToSecondsMinutesHoursWithCrossingOver_CorrectAddition() {
         Time testTime = new Time(59, 58, 1);
 
         Time result = testTime.add(2, 3, 4);
