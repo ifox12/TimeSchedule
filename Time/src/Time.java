@@ -28,7 +28,11 @@ class Time {
     }
 
     Time add(int seconds, int minutes, int hours) {
-        return new Time(this.internalSeconds + seconds + convertMinutesToInternal(minutes) + convertHoursToInternal(hours));
+        return new Time(this.internalSeconds + convertSecondsToInternal(seconds) + convertMinutesToInternal(minutes) + convertHoursToInternal(hours));
+    }
+
+    private int convertSecondsToInternal(int seconds) {
+        return seconds;
     }
 
     private void setSeconds(int seconds) {
