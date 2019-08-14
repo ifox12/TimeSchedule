@@ -24,18 +24,6 @@ class Time {
         setHours(hours);
     }
 
-    Time add(int seconds) {
-        return add(seconds, 0, 0);
-    }
-
-    Time add(int seconds, int minutes) {
-        return add(seconds, minutes, 0);
-    }
-
-    Time add(int seconds, int minutes, int hours) {
-        return new Time(this.internalSeconds + convertSecondsToInternal(seconds) + convertMinutesToInternal(minutes) + convertHoursToInternal(hours));
-    }
-
     Time add(Time addend) {
         return new Time(this.internalSeconds + addend.internalSeconds);
     }
