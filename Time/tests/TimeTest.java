@@ -88,4 +88,16 @@ public class TimeTest {
         assertEquals(0, result.getMinutes());
         assertEquals(1, result.getHours());
     }
+
+    @Test
+    public void add_SecondsMinutesHoursToSecondsMinutesHoursWithoutCrossingOver_CorrectAddition() {
+        Time testTime = new Time(3, 2, 1);
+
+        Time result = testTime.add(1, 2, 3);
+
+        assertEquals(4, result.getHours());
+        assertEquals(4, result.getMinutes());
+        assertEquals(4, result.getSeconds());
+
+    }
 }

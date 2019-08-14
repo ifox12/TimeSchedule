@@ -18,6 +18,12 @@ class Time {
         setMinutes(minutes);
     }
 
+    Time(int seconds, int minutes, int hours) {
+        setSeconds(seconds);
+        setMinutes(minutes);
+        setHours(hours);
+    }
+
     Time add(int seconds) {
         return add(seconds, 0, 0);
 
@@ -42,6 +48,11 @@ class Time {
     private void setMinutes(int minutes) {
         this.internalSeconds += convertMinutesToInternal(minutes);
     }
+
+    private void setHours(int hours) {
+        this.internalSeconds += convertHoursToInternal(hours);
+    }
+
 
     int getSeconds() {
         return internalSeconds % SECONDS_PER_MINUTE;
