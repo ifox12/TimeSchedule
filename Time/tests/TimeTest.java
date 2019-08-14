@@ -121,4 +121,24 @@ class TimeTest {
         assertEquals(1, result.getMinutes());
         assertEquals(1, result.getSeconds());
     }
+
+    @Test
+    void subtract_MoreSecondsFromSeconds_NegativeSeconds() {
+        Time testTime = new Time(1);
+
+        Time result = testTime.subtract(new Time(2));
+
+        assertEquals(-1, result.getSeconds());
+    }
+
+    @Test
+    void subtract_MinutesFromSeconds_ExpectedResult() {
+        Time testTime = new Time(1);
+
+        Time result = testTime.subtract(new Time(0, 2));
+
+        assertEquals(-1, result.getMinutes());
+        assertEquals(-59, result.getSeconds());
+
+    }
 }
