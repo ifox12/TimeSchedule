@@ -20,7 +20,7 @@ class Time {
 
 
     public Time add(int seconds) {
-        return new Time(internalSeconds + seconds);
+        return add(seconds, 0, 0);
 
     }
 
