@@ -49,7 +49,7 @@ class Time {
     }
 
     public int getHours() {
-        return internalSeconds / SECONDS_PER_MINUTE / MINUTES_PER_HOUR;
+        return internalSeconds / SECONDS_PER_HOUR;
     }
 
     public Time add(int seconds, int minutes, int hours) {
