@@ -80,7 +80,7 @@ class TimeTest {
 
     @Test
     void add_AddHoursToZero_TimeEqualsAddend() {
-        Time testTime = new Time();
+        Time testTime = new Time(0);
 
         Time result = testTime.add(new Time(0,0, 1));
 

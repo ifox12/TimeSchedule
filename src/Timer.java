@@ -1,16 +1,38 @@
 class Timer {
 
-    private Time startTime;
+    private Time baseTime;
+    private Time nextTime;
 
     void start() {
-        setStartTime(new Time());
+        setBaseTime(new Time());
     }
 
-    Time getStartTime() {
-        return startTime;
+    void stop() {
+        setNextTime(new Time());
     }
 
-    void setStartTime(Time startTime) {
-        this.startTime = startTime;
+    Time timerResult() {
+        return getNextTime().subtract(getBaseTime());
+    }
+
+    private Time getBaseTime() {
+        return baseTime;
+    }
+
+    private void setBaseTime(Time baseTime) {
+        this.baseTime = baseTime;
+    }
+
+    private Time getNextTime() {
+        return nextTime;
+    }
+
+    private void setNextTime(Time nextTime) {
+        this.nextTime = nextTime;
+    }
+
+    void printTimerResult() {
+        Time resultingTime = timerResult();
+        System.out.println(resultingTime.getHours() + ":" + resultingTime.getMinutes() + ":" + resultingTime.getSeconds());
     }
 }

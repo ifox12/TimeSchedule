@@ -6,7 +6,7 @@ class Time {
     private int internalSeconds = 0;
 
     Time() {
-        setSeconds(0);
+        setSeconds((int) (System.currentTimeMillis() / 1000));
     }
 
     Time(int seconds) {
@@ -67,5 +67,9 @@ class Time {
 
     Time subtract(Time subtrahend) {
         return new Time(this.internalSeconds - subtrahend.internalSeconds);
+    }
+
+    boolean isNotZero() {
+        return internalSeconds != 0;
     }
 }
