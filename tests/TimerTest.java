@@ -21,4 +21,12 @@ class TimerTest {
         assertTrue(testTimer.timerResult().isNotZero());
     }
 
+    @Test
+    void passTime_2Seconds_TimerStopsAfter2Seconds() {
+        Timer testTimer = new Timer();
+        testTimer.passTime(2);
+        testTimer.start();
+
+        assertEquals(2, testTimer.timerResult().getSeconds());
+    }
 }

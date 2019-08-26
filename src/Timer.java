@@ -35,4 +35,8 @@ class Timer {
         Time resultingTime = timerResult();
         System.out.println(resultingTime.getHours() + ":" + resultingTime.getMinutes() + ":" + resultingTime.getSeconds());
     }
+
+    void passTime(int seconds) {
+        nextTime = new Time().add(new Time(seconds));
+    }
 }
